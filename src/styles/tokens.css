@@ -1,0 +1,58 @@
+/* ─── FLOW COFFEE V2 — Design Tokens ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Palette */
+  --cobalt:        #07079B;
+  --cobalt-dark:   #050575;
+  --cobalt-dim:    rgba(7, 7, 155, 0.10);
+  --cobalt-mid:    rgba(7, 7, 155, 0.20);
+  --gold:          #C4A96A;
+  --gold-dim:      rgba(196, 169, 106, 0.35);
+  --sage:          #9DBE8B;
+  --sage-bg:       rgba(157, 190, 139, 0.85);
+  --tan:           #C59E71;
+  --cream:         #F7F6F2;
+  --white:         #FFFFFF;
+  --ink:           #0D0C2B;
+  --muted:         #8A8A9A;
+
+  /* Typography */
+  --font-display: 'Inria Serif', Georgia, serif;
+  --font-body:    'Inria Sans', system-ui, sans-serif;
+
+  /* Fluid type scale */
+  --text-xs:   clamp(0.68rem,  1.1vw,  0.82rem);
+  --text-sm:   clamp(0.85rem,  1.4vw,  1rem);
+  --text-md:   clamp(1rem,     1.8vw,  1.15rem);
+  --text-lg:   clamp(1.15rem,  2.2vw,  1.5rem);
+  --text-xl:   clamp(1.5rem,   3vw,    2.2rem);
+  --text-2xl:  clamp(2rem,     4.5vw,  3.5rem);
+  --text-3xl:  clamp(2.8rem,   7vw,    5.5rem);
+  --text-hero: clamp(4rem,     11vw,   9rem);
+
+  /* Spacing */
+  --sp-1:  0.5rem;
+  --sp-2:  1rem;
+  --sp-3:  1.5rem;
+  --sp-4:  2rem;
+  --sp-6:  3rem;
+  --sp-8:  4rem;
+  --sp-12: 6rem;
+  --sp-16: 8rem;
+
+  /* Layout */
+  --max-w:   1320px;
+  --gutter:  clamp(1.25rem, 5vw, 5rem);
+
+  /* Motion */
+  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
+  --dur:     0.5s;
+  --dur-lg:  0.8s;
+
+  /* Radius */
+  --r-sm:   6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-full: 9999px;
+}
