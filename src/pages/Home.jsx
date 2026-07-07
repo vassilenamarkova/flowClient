@@ -88,6 +88,7 @@ export default function Home() {
       {/* ── BANNER / MENU TEASER ── */}
       <div id="home" className="banner">
         <video autoPlay muted loop playsInline className="banner__video">
+          <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/quicktime" />
           <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/mp4" />
         </video>
       </div>
