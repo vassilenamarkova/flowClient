@@ -215,6 +215,13 @@ button {
   .nav {
     display: flex;
     justify-content: space-between;
+    position: relative;
+  }
+
+  .nav__logo-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav__seg { display: none; }
@@ -387,7 +394,7 @@ button {
   }
 
   .hero__cta-wrap {
-    bottom: 1rem;
+    bottom: -1rem;
     left: var(--sp-2);
     right: var(--sp-2);
     display: flex;
@@ -885,10 +892,9 @@ button {
 
   .contact__instagram iframe {
     transform: scale(0.52);
-    transform-origin: top center;
-    left: 50%;
+    transform-origin: top left;
     position: relative;
-    translate: -50%;
+    left: -2rem;
   }
 }
 
