@@ -1,6 +1,6 @@
 export const t = {
   EN: {
-    home:     'Home',
+    home:     'Menu',
     about:    'About us',
     careers:  'Careers',
     contacts: 'Contacts',
@@ -63,7 +63,7 @@ export const t = {
   },
 
   BG: {
-    home:     'Начало',
+    home:     'Меню',
     about:    'За нас',
     careers:  'Кариери',
     contacts: 'Контакти',

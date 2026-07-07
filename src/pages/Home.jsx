@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { t } from '../data/translations';
 import ModelViewer from '../components/ModelViewer';
@@ -86,6 +87,7 @@ export default function Home() {
       {/* ── BANNER ── */}
       <div id="home" className="banner">
         <img src="/banner2.jpg" alt="Flow Coffee interior" className="banner__img" />
+        <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
       </div>
 
       {/* ── ABOUT ── */}

@@ -9,6 +9,7 @@ export default function ModelViewer() {
       camera-controls
       disable-zoom
       disable-tap
+      interaction-prompt="none"
       environment-image="neutral"
       exposure="1.2"
       style={{ width: '100%', height: '100%' }}

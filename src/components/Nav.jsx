@@ -30,7 +30,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}${isCareers ? ' nav--careers' : ''}`}>
       {/* Left links — desktop */}
       <div className="nav__seg nav__seg--left">
-        <button className="nav__link" onClick={() => scrollTo('home')}>{tr.home}</button>
+        <Link className="nav__link" to="/menu">{tr.home}</Link>
         <button className="nav__link" onClick={() => scrollTo('about')}>{tr.about}</button>
         <Link className="nav__link" to="/careers">{tr.careers}</Link>
         <button className="nav__link" onClick={() => scrollTo('contact')}>{tr.contacts}</button>
@@ -68,7 +68,7 @@ export default function Nav() {
 
       {/* Mobile overlay */}
       <nav className={`nav__overlay${open ? ' open' : ''}`}>
-        <button className="nav__link" onClick={() => scrollTo('home')}>{tr.home}</button>
+        <Link className="nav__link" to="/menu">{tr.home}</Link>
         <button className="nav__link" onClick={() => scrollTo('about')}>{tr.about}</button>
         <Link className="nav__link" to="/careers">{tr.careers}</Link>
         <button className="nav__link" onClick={() => scrollTo('contact')}>{tr.contacts}</button>
