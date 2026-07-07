@@ -17,7 +17,15 @@ export default function Nav() {
 
   useEffect(() => { setOpen(false); }, [location]);
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
   }, [open]);
 
   const scrollTo = (id) => {

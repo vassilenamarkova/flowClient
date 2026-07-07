@@ -76,18 +76,20 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Scroll arrow — bottom left */}
+        {/* Menu button + scroll arrow — bottom left */}
         <div className="hero__cta-wrap">
+          <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
           <div style={{ width: 28, height: 64 }}>
             <Lottie animationData={scrollAnim} loop />
           </div>
         </div>
       </section>
 
-      {/* ── BANNER ── */}
+      {/* ── BANNER / MENU TEASER ── */}
       <div id="home" className="banner">
-        <img src="/banner2.jpg" alt="Flow Coffee interior" className="banner__img" />
-        <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
+        <video autoPlay muted loop playsInline className="banner__video">
+          <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/mp4" />
+        </video>
       </div>
 
       {/* ── ABOUT ── */}

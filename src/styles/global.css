@@ -195,7 +195,7 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--cobalt);
+  background: var(--cream);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -221,13 +221,13 @@ button {
   .nav__burger { display: flex; }
   .nav__overlay { display: flex; }
 
-  .nav__overlay .nav__link,
-  .nav__overlay .nav__link::after { color: var(--white); background: var(--white); }
+  .nav__overlay .nav__link { color: var(--cobalt); background: none; }
+  .nav__overlay .nav__link::after { background: var(--cobalt); }
 
   .nav__overlay .nav__lang {
     color: var(--cobalt);
-    background: var(--white);
-    border-color: var(--white);
+    background: transparent;
+    border-color: var(--cobalt);
   }
 }
 
@@ -305,8 +305,8 @@ button {
 
 .hero__cta-wrap {
   position: absolute;
-  bottom: -2rem;
-  left: var(--gutter);
+  bottom: 0.5rem;
+  left: 1rem;
   z-index: 2;
   padding-bottom: 0.5rem;
 }
@@ -394,33 +394,70 @@ button {
 .banner {
   height: clamp(38vh, 52vw, 70vh);
   overflow: hidden;
-  margin-top: -2rem;
+  margin-top: -3rem;
   position: relative;
   z-index: 2;
 }
 
+.banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
+.banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+}
+
 .banner__menu-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0.9em 2.5em;
-  border: 1.5px solid var(--white);
+  padding: 0.45em 4em;
+  border: 1.5px solid var(--cobalt);
   border-radius: var(--r-full);
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--white);
-  backdrop-filter: blur(4px);
-  background: rgba(255,255,255,0.1);
+  color: var(--cobalt);
+  background: transparent;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  white-space: nowrap;
 }
 
 .banner__menu-btn:hover {
-  background: var(--white);
-  color: var(--cobalt);
+  background: var(--cobalt);
+  color: var(--white);
+}
+
+/* White version when used inside the video banner */
+.banner .banner__menu-btn {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  transform: none;
+  text-align: center;
+  z-index: 3;
+  border-radius: var(--r-full);
+  border-left: 1.5px solid var(--white);
+  border-right: 1.5px solid var(--white);
+  border-color: var(--white);
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  padding: 0.6em 0;
+}
+
+.banner .banner__menu-btn:hover {
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
 }
 
 .banner__img {
