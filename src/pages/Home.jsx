@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
+import LazyIframe from '../components/LazyIframe';
 import { t } from '../data/translations';
 import ModelViewer from '../components/ModelViewer';
 import Slideshow from '../components/Slideshow';
@@ -88,8 +89,8 @@ export default function Home() {
       {/* ── BANNER / MENU TEASER ── */}
       <div id="home" className="banner">
         <video autoPlay muted loop playsInline className="banner__video">
+          <source src="/banner.mp4" type="video/mp4" />
           <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/quicktime" />
-          <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/mp4" />
         </video>
       </div>
 
@@ -158,13 +159,12 @@ export default function Home() {
           </div>
           <div className="contact__instagram-wrap">
             <div className="contact__instagram">
-              <iframe
+              <LazyIframe
                 src="https://emb.fouita.com/widget/0x299ba2/ftul0hyub"
                 title="Instagram Feed"
                 width="800"
                 height="646"
                 scrolling="auto"
-                loading="lazy"
                 frameBorder="0"
               />
             </div>
@@ -177,12 +177,12 @@ export default function Home() {
         </div>
         {/* Map */}
         <div className="contact__map-embed">
-          <iframe
+          <LazyIframe
             title="Flow Coffee location"
             src="https://maps.google.com/maps?q=FLOW+Coffee+and+Pastry,+ul.+Budapeshta+26,+1202+Sofia,+Bulgaria&z=17&output=embed"
             allowFullScreen
-            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
           />
         </div>
       </section>
