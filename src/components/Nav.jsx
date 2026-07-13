@@ -35,6 +35,7 @@ export default function Nav() {
   };
 
   return (
+    <>
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}${isCareers ? ' nav--careers' : ''}`}>
       {/* Left links — desktop */}
       <div className="nav__seg nav__seg--left">
@@ -73,16 +74,18 @@ export default function Nav() {
       >
         <span /><span /><span />
       </button>
-
-      {/* Mobile overlay */}
-      <nav className={`nav__overlay${open ? ' open' : ''}`}>
-        <Link className="nav__link" to="/menu">{tr.home}</Link>
-        <button className="nav__link" onClick={() => scrollTo('about')}>{tr.about}</button>
-        <Link className="nav__link" to="/careers">{tr.careers}</Link>
-        <button className="nav__link" onClick={() => scrollTo('contact')}>{tr.contacts}</button>
-        <a href="https://www.takeaway.com/bg-en/menu/flow-coffee-and-pastrykafe-i-peciva-flou" target="_blank" rel="noopener noreferrer" className="nav__link">{tr.order}</a>
-        <button className="nav__lang" onClick={toggle}>{lang === 'EN' ? 'БГ' : 'EN'}</button>
-      </nav>
     </header>
+
+    {/* Mobile overlay — rendered outside <header> so an ancestor's backdrop-filter
+        (nav--careers / nav--scrolled) can't turn it into a fixed-position containing block */}
+    <nav className={`nav__overlay${open ? ' open' : ''}`}>
+      <Link className="nav__link" to="/menu">{tr.home}</Link>
+      <button className="nav__link" onClick={() => scrollTo('about')}>{tr.about}</button>
+      <Link className="nav__link" to="/careers">{tr.careers}</Link>
+      <button className="nav__link" onClick={() => scrollTo('contact')}>{tr.contacts}</button>
+      <a href="https://www.takeaway.com/bg-en/menu/flow-coffee-and-pastrykafe-i-peciva-flou" target="_blank" rel="noopener noreferrer" className="nav__link">{tr.order}</a>
+      <button className="nav__lang" onClick={toggle}>{lang === 'EN' ? 'БГ' : 'EN'}</button>
+    </nav>
+    </>
   );
 }
