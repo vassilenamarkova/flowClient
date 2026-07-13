@@ -511,8 +511,8 @@ button {
 
 @media (max-width: 768px) {
   .banner .banner__menu-btn {
-    top: 70%;
-    width: 72%;
+    top: 65%;
+    width: 68%;
   }
 }
 
@@ -962,10 +962,12 @@ button {
 
   .contact__map-embed {
     padding-left: 3rem;
+    padding-right: 2.5rem;
   }
 
   .contact__map-embed::after {
     left: 3rem;
+    right: 2.5rem;
   }
 }
 
