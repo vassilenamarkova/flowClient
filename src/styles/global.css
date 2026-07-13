@@ -511,7 +511,7 @@ button {
 
 @media (min-width: 769px) {
   .banner .banner__menu-btn {
-    top: 52%;
+    top: 49%;
     border-width: 2.5px;
     font-size: var(--text-md);
     font-weight: 800;
