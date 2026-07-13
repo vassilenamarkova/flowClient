@@ -421,9 +421,17 @@ button {
     font-size: clamp(4rem, 26vw, 7.5rem);
   }
 
+  .hero__ghost--mobile span:first-child {
+    font-size: clamp(5.5rem, 34vw, 9.5rem);
+  }
+
+  .hero__ghost--mobile span:last-child {
+    margin-top: 0.6rem;
+  }
+
   .banner .banner__menu-btn {
-    top: 65%;
-    width: 65%;
+    top: 70%;
+    width: 72%;
   }
 }
 
@@ -933,16 +941,18 @@ button {
   .contact__instagram-wrap {
     margin: 0;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .contact__instagram {
     max-width: 100%;
-    height: 340px;
+    height: 244px;
     overflow: hidden;
   }
 
   .contact__instagram iframe {
-    transform: scale(0.52);
+    transform: scale(0.375);
     transform-origin: top left;
     position: relative;
     left: 0;
@@ -954,10 +964,6 @@ button {
 
   .contact__map-embed::after {
     left: 3rem;
-  }
-
-  .contact__map-embed::after {
-    left: 0;
   }
 }
 
