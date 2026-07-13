@@ -418,12 +418,12 @@ button {
 
   .hero__ghost--mobile {
     display: block;
-    font-size: clamp(3.4rem, 17vw, 6.5rem);
+    font-size: clamp(4rem, 26vw, 7.5rem);
   }
 
   .banner .banner__menu-btn {
-    top: 58%;
-    width: 55%;
+    top: 65%;
+    width: 65%;
   }
 }
 
@@ -945,7 +945,7 @@ button {
     transform: scale(0.52);
     transform-origin: top left;
     position: relative;
-    left: -5rem;
+    left: 0;
   }
 
   .contact__map-embed {
