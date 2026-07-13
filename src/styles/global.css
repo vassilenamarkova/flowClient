@@ -1106,12 +1106,7 @@ button {
 
 @media (max-width: 768px) {
   .menu-models {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .menu-model {
-    height: clamp(220px, 60vw, 300px);
+    display: none;
   }
 }
 
