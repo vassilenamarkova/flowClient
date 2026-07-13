@@ -52,13 +52,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Safari (iOS & macOS) sometimes ignores the JSX `muted`/`autoPlay` attributes
-    // and gates playback behind a user gesture unless `.muted` is also set imperatively
-    // and `.play()` is called directly.
+    // React never reflects the JSX `muted` prop as an actual HTML attribute on
+    // <video> (only as a JS property). Safari's autoplay permission check reads
+    // the attribute, not just the property, so without setAttribute it silently
+    // blocks playback until a user gesture even though `video.muted === true`.
     const video = bannerVideoRef.current;
     if (!video) return;
+    video.setAttribute('muted', '');
     video.muted = true;
-    video.play().catch(() => {});
+    video.defaultMuted = true;
+
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    video.addEventListener('loadedmetadata', tryPlay);
+    video.addEventListener('canplay', tryPlay);
+
+    // Some Safari sessions still reject purely-programmatic autoplay (even muted)
+    // with NotAllowedError until the page has been "engaged" at all — not
+    // necessarily a tap on the video itself. Catch the first interaction of any
+    // kind (scroll included) and use it to (re)start playback silently.
+    const gestureEvents = ['scroll', 'touchstart', 'click', 'keydown'];
+    const onFirstGesture = () => {
+      tryPlay();
+      gestureEvents.forEach(evt => window.removeEventListener(evt, onFirstGesture));
+    };
+    gestureEvents.forEach(evt => window.addEventListener(evt, onFirstGesture, { passive: true, once: true }));
+
+    return () => {
+      video.removeEventListener('loadedmetadata', tryPlay);
+      video.removeEventListener('canplay', tryPlay);
+      gestureEvents.forEach(evt => window.removeEventListener(evt, onFirstGesture));
+    };
   }, []);
 
   const tr = t[lang];
