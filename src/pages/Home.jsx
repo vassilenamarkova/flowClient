@@ -77,21 +77,21 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Menu button + scroll arrow — bottom left */}
+        {/* Scroll arrow — bottom left */}
         <div className="hero__cta-wrap">
-          <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
           <div style={{ width: 28, height: 64 }}>
             <Lottie animationData={scrollAnim} loop />
           </div>
         </div>
       </section>
 
-      {/* ── BANNER / MENU TEASER ── */}
+      {/* ── BANNER ── */}
       <div id="home" className="banner">
         <video autoPlay muted loop playsInline className="banner__video">
-          <source src="/banner.mp4" type="video/mp4" />
-          <source src="/ScreenRecording_07-07-2026 19-29-56_1.mov" type="video/quicktime" />
+          <source src="/mov1.mp4" type="video/mp4" />
         </video>
+        <p className="banner__overlay-text" style={{ display: 'none' }}>new drinks</p>
+        <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
       </div>
 
       {/* ── ABOUT ── */}
