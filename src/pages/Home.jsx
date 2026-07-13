@@ -56,9 +56,13 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero" id="landing">
         {/* Ghost text behind everything */}
-        <p className="hero__ghost" aria-hidden="true">
+        <p className="hero__ghost hero__ghost--desktop" aria-hidden="true">
           <span>FLOW COFFEE</span>
           <span>FLOW COFFEE</span>
+        </p>
+        <p className="hero__ghost hero__ghost--mobile" aria-hidden="true">
+          <span>FLOW</span>
+          <span>COFFEE</span>
         </p>
 
         {/* 3-D cup — centred */}

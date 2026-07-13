@@ -283,6 +283,10 @@ button {
   display: block;
 }
 
+.hero__ghost--mobile {
+  display: none;
+}
+
 /* 3-D cup — centred */
 .hero__model {
   position: absolute;
@@ -408,8 +412,18 @@ button {
     padding: 0.6em 0;
   }
 
-  .hero__ghost {
-    font-size: clamp(5rem, 28vw, 10rem);
+  .hero__ghost--desktop {
+    display: none;
+  }
+
+  .hero__ghost--mobile {
+    display: block;
+    font-size: clamp(3.4rem, 17vw, 6.5rem);
+  }
+
+  .banner .banner__menu-btn {
+    top: 58%;
+    width: 55%;
   }
 }
 
@@ -660,8 +674,10 @@ button {
 
 @media (max-width: 768px) {
   .about__inner { grid-template-columns: 1fr; }
-  .about__ghost { display: none; }
-  .about__ghost--bottom { display: none; }
+  .about__ghost,
+  .about__ghost--bottom {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
   .slideshow { aspect-ratio: 3 / 2; }
 }
 
@@ -904,11 +920,18 @@ button {
 }
 
 @media (max-width: 768px) {
-  .contact__inner { grid-template-columns: 1fr; }
-  .contact__ghost { display: none; }
+  .contact__inner {
+    grid-template-columns: 1fr;
+    padding-left: 3rem;
+  }
+
+  .contact__ghost {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+    top: -0.4rem;
+  }
 
   .contact__instagram-wrap {
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
   }
 
@@ -923,6 +946,18 @@ button {
     transform-origin: top left;
     position: relative;
     left: -5rem;
+  }
+
+  .contact__map-embed {
+    padding-left: 3rem;
+  }
+
+  .contact__map-embed::after {
+    left: 3rem;
+  }
+
+  .contact__map-embed::after {
+    left: 0;
   }
 }
 
@@ -1342,6 +1377,7 @@ button {
 
   .careers__triptych {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     height: auto;
   }
 
