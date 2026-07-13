@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import LazyIframe from '../components/LazyIframe';
@@ -40,6 +40,7 @@ function ContactHours({ lang }) {
 
 export default function Home() {
   const { lang } = useLang();
+  const bannerVideoRef = useRef(null);
 
   useEffect(() => {
     const hash = window.location.hash?.slice(1);
@@ -49,6 +50,17 @@ export default function Home() {
       }, 100);
     }
   }, []);
+
+  useEffect(() => {
+    // Safari (iOS & macOS) sometimes ignores the JSX `muted`/`autoPlay` attributes
+    // and gates playback behind a user gesture unless `.muted` is also set imperatively
+    // and `.play()` is called directly.
+    const video = bannerVideoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
+
   const tr = t[lang];
 
   return (
@@ -91,7 +103,7 @@ export default function Home() {
 
       {/* ── BANNER ── */}
       <div id="home" className="banner">
-        <video autoPlay muted loop playsInline className="banner__video">
+        <video ref={bannerVideoRef} autoPlay muted loop playsInline className="banner__video">
           <source src="/mov1.mp4" type="video/mp4" />
         </video>
         <p className="banner__overlay-text" style={{ display: 'none' }}>new drinks</p>
