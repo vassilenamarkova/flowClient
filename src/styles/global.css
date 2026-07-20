@@ -501,9 +501,9 @@ button {
   z-index: 3;
   border-color: var(--cobalt);
   color: var(--cobalt);
-  background: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.38);
   backdrop-filter: blur(4px);
-  padding: 0.5em 3em;
+  padding: 0.5em 3.6em;
   text-align: center;
 }
 
@@ -519,7 +519,7 @@ button {
   .banner .banner__menu-btn {
     bottom: 1.5rem;
     left: 1.5rem;
-    padding: 0.45em 2.2em;
+    padding: 0.45em 2.6em;
   }
 }
 
