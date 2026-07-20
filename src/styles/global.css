@@ -507,8 +507,9 @@ button {
 
 @media (max-width: 768px) {
   .banner__cta {
-    bottom: 1.25rem;
-    right: 3rem;
+    top: 1.25rem;
+    bottom: auto;
+    right: 1.5rem;
   }
 }
 
@@ -702,6 +703,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding-top: 2.5rem;
+  }
   .about__inner { grid-template-columns: 1fr; }
   .about__ghost,
   .about__ghost--bottom {
@@ -949,6 +953,10 @@ button {
 }
 
 @media (max-width: 768px) {
+  .contact {
+    padding-top: 2.5rem;
+  }
+
   .contact__inner {
     grid-template-columns: 1fr;
     padding-left: 3rem;
