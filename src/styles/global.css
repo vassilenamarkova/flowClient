@@ -386,6 +386,7 @@ button {
   .hero__model {
     width: clamp(200px, 70vw, 360px);
     height: clamp(200px, 70vw, 360px);
+    top: 42%;
     transform: translate(-50%, -55%);
   }
 
@@ -418,10 +419,6 @@ button {
 
   .hero__ghost--mobile {
     display: block;
-    font-size: clamp(4rem, 26vw, 7.5rem);
-  }
-
-  .hero__ghost--mobile span:first-child {
     font-size: clamp(5.5rem, 34vw, 9.5rem);
   }
 

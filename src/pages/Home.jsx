@@ -63,7 +63,7 @@ export default function Home() {
         </p>
         <p className="hero__ghost hero__ghost--mobile" aria-hidden="true">
           <span>FLOW</span>
-          <span>COFFEE</span>
+          <span>FLOW</span>
         </p>
 
         {/* 3-D cup — centred */}
