@@ -496,22 +496,19 @@ button {
 /* White version when used inside the video banner */
 .banner .banner__menu-btn {
   position: absolute;
-  top: 45%;
-  left: 51%;
-  transform: translate(-50%, -50%);
+  bottom: 2rem;
+  left: 2rem;
   z-index: 3;
   border-color: var(--cobalt);
   color: var(--cobalt);
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(4px);
-  padding: 0.45em 0;
-  width: 35%;
+  padding: 0.5em 2em;
   text-align: center;
 }
 
 @media (min-width: 769px) {
   .banner .banner__menu-btn {
-    top: 49%;
     border-width: 2.5px;
     font-size: var(--text-md);
     font-weight: 800;
@@ -520,8 +517,9 @@ button {
 
 @media (max-width: 768px) {
   .banner .banner__menu-btn {
-    top: 58%;
-    width: 68%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.45em 1.5em;
   }
 }
 
