@@ -496,8 +496,8 @@ button {
 /* White version when used inside the video banner */
 .banner .banner__menu-btn {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 4rem;
+  right: 4rem;
   z-index: 3;
   border-color: var(--cobalt);
   color: var(--cobalt);
@@ -517,8 +517,8 @@ button {
 
 @media (max-width: 768px) {
   .banner .banner__menu-btn {
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 3rem;
+    right: 3rem;
     padding: 0.45em 2.6em;
   }
 }
