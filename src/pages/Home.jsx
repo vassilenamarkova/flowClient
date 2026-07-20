@@ -179,7 +179,7 @@ export default function Home() {
                   <img src="/insta.svg" alt="" aria-hidden="true" />
                   @flowcoffeesofia
                 </a>
-                <a href="https://www.facebook.com/flowcoffee" target="_blank" rel="noopener noreferrer" className="contact__link">
+                <a href="https://www.facebook.com/p/FLOW-Coffee-and-Pastry-100082981704930/" target="_blank" rel="noopener noreferrer" className="contact__link">
                   <img src="/facebook.svg" alt="" aria-hidden="true" />
                   @flowcoffee
                 </a>
