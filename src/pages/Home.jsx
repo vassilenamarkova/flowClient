@@ -150,7 +150,7 @@ export default function Home() {
                 </a>
               </div>
               <a
-                href="https://www.google.com/maps/place/FLOW+Coffee+and+Pastry/@42.7002383,23.3279669,18.72z"
+                href="https://www.google.com/maps/place/FLOW+Coffee+and+Pastry/@42.7002383,23.3279669,18z/data=!3m1!5s0x40aa85656e45906d:0xba86972b113ee314!4m6!3m5!1s0x40aa85ca12fd3843:0xf0fd2f34c3e8d20d!8m2!3d42.7002864!4d23.3276588!16s%2Fg%2F11rz4tdfs2?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank" rel="noopener noreferrer"
                 className="contact__map"
               >
