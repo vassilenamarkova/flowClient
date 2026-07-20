@@ -493,12 +493,28 @@ button {
   color: var(--white);
 }
 
-/* White version when used inside the video banner */
-.banner .banner__menu-btn {
+/* Wraps the "new drinks" label and menu button so the label stretches to match the button's width */
+.banner__cta {
   position: absolute;
   top: 4rem;
   right: 4rem;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .banner__cta {
+    top: 3rem;
+    right: 3rem;
+  }
+}
+
+/* White version when used inside the video banner */
+.banner .banner__menu-btn {
+  position: static;
   border-color: var(--cobalt);
   color: var(--cobalt);
   background: rgba(255,255,255,0.38);
@@ -517,22 +533,18 @@ button {
 
 @media (max-width: 768px) {
   .banner .banner__menu-btn {
-    top: 3rem;
-    right: 3rem;
     padding: 0.45em 2.6em;
   }
 }
 
 .banner__overlay-text {
-  position: absolute;
-  top: 20%;
-  left: 51%;
-  transform: translateX(-50%);
-  z-index: 3;
   font-family: var(--font-body);
-  font-weight: 900;
-  font-size: clamp(3rem, 9vw, 7rem);
-  color: var(--cobalt);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
   white-space: nowrap;
   pointer-events: none;
 }

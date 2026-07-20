@@ -93,8 +93,10 @@ export default function Home() {
       {/* ── BANNER ── */}
       <div id="home" className="banner">
         <img src="/banban.jpg" alt="" className="banner__img" />
-        <p className="banner__overlay-text" style={{ display: 'none' }}>new drinks</p>
-        <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
+        <div className="banner__cta">
+          <p className="banner__overlay-text">new drinks</p>
+          <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
+        </div>
       </div>
 
       {/* ── ABOUT ── */}
