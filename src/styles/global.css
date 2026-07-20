@@ -496,7 +496,7 @@ button {
 /* Wraps the "new drinks" label and menu button so the label stretches to match the button's width */
 .banner__cta {
   position: absolute;
-  bottom: 4rem;
+  bottom: 2rem;
   right: 4rem;
   z-index: 3;
   display: flex;
@@ -507,7 +507,7 @@ button {
 
 @media (max-width: 768px) {
   .banner__cta {
-    bottom: 3rem;
+    bottom: 1.5rem;
     right: 3rem;
   }
 }
