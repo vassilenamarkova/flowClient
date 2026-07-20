@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import LazyIframe from '../components/LazyIframe';
@@ -40,7 +40,6 @@ function ContactHours({ lang }) {
 
 export default function Home() {
   const { lang } = useLang();
-  const bannerVideoRef = useRef(null);
 
   useEffect(() => {
     const hash = window.location.hash?.slice(1);
@@ -49,40 +48,6 @@ export default function Home() {
         document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
-  }, []);
-
-  useEffect(() => {
-    // React never reflects the JSX `muted` prop as an actual HTML attribute on
-    // <video> (only as a JS property). Safari's autoplay permission check reads
-    // the attribute, not just the property, so without setAttribute it silently
-    // blocks playback until a user gesture even though `video.muted === true`.
-    const video = bannerVideoRef.current;
-    if (!video) return;
-    video.setAttribute('muted', '');
-    video.muted = true;
-    video.defaultMuted = true;
-
-    const tryPlay = () => video.play().catch(() => {});
-    tryPlay();
-    video.addEventListener('loadedmetadata', tryPlay);
-    video.addEventListener('canplay', tryPlay);
-
-    // Some Safari sessions still reject purely-programmatic autoplay (even muted)
-    // with NotAllowedError until the page has been "engaged" at all — not
-    // necessarily a tap on the video itself. Catch the first interaction of any
-    // kind (scroll included) and use it to (re)start playback silently.
-    const gestureEvents = ['scroll', 'touchstart', 'click', 'keydown'];
-    const onFirstGesture = () => {
-      tryPlay();
-      gestureEvents.forEach(evt => window.removeEventListener(evt, onFirstGesture));
-    };
-    gestureEvents.forEach(evt => window.addEventListener(evt, onFirstGesture, { passive: true, once: true }));
-
-    return () => {
-      video.removeEventListener('loadedmetadata', tryPlay);
-      video.removeEventListener('canplay', tryPlay);
-      gestureEvents.forEach(evt => window.removeEventListener(evt, onFirstGesture));
-    };
   }, []);
 
   const tr = t[lang];
@@ -127,9 +92,7 @@ export default function Home() {
 
       {/* ── BANNER ── */}
       <div id="home" className="banner">
-        <video ref={bannerVideoRef} autoPlay muted loop playsInline className="banner__video">
-          <source src="/mov1.mp4" type="video/mp4" />
-        </video>
+        <img src="/banban.jpg" alt="" className="banner__img" />
         <p className="banner__overlay-text" style={{ display: 'none' }}>new drinks</p>
         <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
       </div>
