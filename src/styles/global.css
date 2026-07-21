@@ -423,6 +423,7 @@ button {
 
   .hero__ghost--mobile {
     display: block;
+    top: 4.5rem;
     font-size: clamp(5.5rem, 34vw, 9.5rem);
   }
 
