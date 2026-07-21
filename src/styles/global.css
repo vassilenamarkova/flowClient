@@ -383,6 +383,10 @@ button {
 .hero__cta:hover svg { transform: translateX(4px); }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 78svh;
+  }
+
   .hero__model {
     width: clamp(200px, 70vw, 360px);
     height: clamp(200px, 70vw, 360px);
