@@ -428,12 +428,22 @@ button {
 }
 
 /* ─── BANNER ─────────────────────────────────────────────────────────────── */
+.banner-wrap {
+  position: relative;
+}
+
 .banner {
   height: clamp(38vh, 52vw, 70vh);
   overflow: hidden;
   margin-top: -3rem;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 0;
+  }
 }
 
 .banner__video {
@@ -504,17 +514,14 @@ button {
 
 @media (max-width: 768px) {
   .banner__cta {
-    top: 0.5rem;
-    bottom: auto;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    margin: 1rem auto 0.75rem;
     width: 88%;
   }
 }
 
 /* White version when used inside the video banner */
-.banner .banner__menu-btn {
+.banner-wrap .banner__menu-btn {
   position: static;
   border-color: var(--cobalt);
   color: var(--cobalt);
@@ -525,7 +532,7 @@ button {
 }
 
 @media (min-width: 769px) {
-  .banner .banner__menu-btn {
+  .banner-wrap .banner__menu-btn {
     border-width: 2.5px;
     font-size: var(--text-md);
     font-weight: 800;
@@ -533,7 +540,7 @@ button {
 }
 
 @media (max-width: 768px) {
-  .banner .banner__menu-btn {
+  .banner-wrap .banner__menu-btn {
     padding: 0.45em 0;
   }
 }
@@ -556,7 +563,7 @@ button {
   }
 }
 
-.banner .banner__menu-btn:hover {
+.banner-wrap .banner__menu-btn:hover {
   background: var(--cobalt);
   color: var(--white);
 }

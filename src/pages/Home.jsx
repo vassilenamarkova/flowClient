@@ -91,11 +91,13 @@ export default function Home() {
       </section>
 
       {/* ── BANNER ── */}
-      <div id="home" className="banner">
-        <img src="/banban.jpg" alt="" className="banner__img" />
+      <div className="banner-wrap">
         <div className="banner__cta">
           <p className="banner__overlay-text">new drinks</p>
           <Link to="/menu" className="banner__menu-btn">{tr.home}</Link>
+        </div>
+        <div id="home" className="banner">
+          <img src="/banban.jpg" alt="" className="banner__img" />
         </div>
       </div>
 
